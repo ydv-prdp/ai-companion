@@ -14,22 +14,22 @@ interface RootPageProps{
 
 export default async function Home({searchParams}:RootPageProps) {
   const data = await prismadb.companion.findMany({
-    where:{
-      categoryId:searchParams.categoryId,
-      name:{
-        search:searchParams.name
-      }
+    where: {
+      categoryId: searchParams.categoryId,
+      name: {
+        search: searchParams.name,
+      },
     },
-    orderBy:{
-      createdAt:"desc",
+    orderBy: {
+      createdAt: "desc"
     },
-    include:{
-      _count:{
-        select:{
-          messages:true
+    include: {
+      _count: {
+        select: {
+          messages: true,
         }
       }
-    }
+    },
   })
   const categories = await prismadb.category.findMany();
   return (
