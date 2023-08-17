@@ -238,7 +238,7 @@ const onSubmit = async(values:z.infer<typeof formSchema>)=>{
                                             />
                                         </FormControl>
                                         <FormDescription>
-                                            Describe in detail your companion&apos;s backstory and relevant details.
+                                            Describe in detail the backstory and relevant details of your companion.
                                         </FormDescription>
                                         <FormMessage/>
                                 </FormItem>
